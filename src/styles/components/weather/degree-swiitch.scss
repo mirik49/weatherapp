@@ -1,0 +1,50 @@
+.degree-switch {
+  border: 1px solid #FFFFFF;
+  border-radius: 8px;
+  margin-right: 22px;
+  margin-top: 5px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    border: 1px solid #ffffff;
+    border-radius: 50%;
+    width: 4px;
+    height: 5px;
+    left: -14px;
+    top: 6px;
+  }
+
+  &__btn {
+    border: none;
+    background: none;
+    outline: none;
+    padding: 2px 13px;
+    font-family: "Lato", "Arial", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.4);
+    mix-blend-mode: normal;
+
+    &--active {
+      font-family: "Lato", "Arial", sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 22px;
+      color: #FFFFFF;
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  .degree-switch {
+    position: absolute;
+    top: 31%;
+    right: 4%;
+  }
+}

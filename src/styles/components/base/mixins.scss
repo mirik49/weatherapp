@@ -1,0 +1,20 @@
+@import "variables";
+@import "fonts";
+
+@mixin robotoRegular {
+  font-family: "Roboto-Regular", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  color: $black;
+}
+
+@mixin robotoBold {
+  font-family: "Roboto-Bold", "Arial", sans-serif;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 100;
+  letter-spacing: 0.01em;
+  color: $black;
+}

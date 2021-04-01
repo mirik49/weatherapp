@@ -1,0 +1,27 @@
+.weather-header {
+  display: flex;
+  justify-content: center;
+  min-height: 100px;
+
+  &__container {
+    padding: 0 21px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media(min-width: 1024px) {
+  .weather-header {
+    min-height: 260px;
+
+    &__container {
+      padding: 70px 99px 75px;
+      position: relative;
+      max-width: 1366px;
+      width: 100%;
+    }
+  }
+}
