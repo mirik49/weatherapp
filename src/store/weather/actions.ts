@@ -1,9 +1,9 @@
 import {
-  apiGetCurrentWeather,
-  apiGetWeatherByCity, apiGetWeatherByCoord
+    apiGetAllCity,
+    apiGetCurrentWeather,
+    apiGetWeatherByCity, apiGetWeatherByCoord
 } from "../../services/Api";
-import Router from "next/router";
-import axios from "axios";
+
 
 export function setWeatherData(actionVar, actionData) {
   return {
@@ -45,16 +45,24 @@ export const searchCityByLocation = () => (dispatch) =>{
         .then(data => {
           const {name} = data;
           dispatch(setWeatherData("currentCity", name));
-          // getCurrentWeather(lat, lon);
           apiGetCurrentWeather(lat, lon)
             .then(response => {
               dispatch(setWeatherData("currentWeather", response.data));
-              // setCurrentWeather(response.data);
-              // endHandler && endHandler(false); //hide searchBar
             });
         });
     });
   }
 };
 
-
+export const allCountries = () => (dispatch) => {
+    apiGetAllCity().then(response => {
+        const allAreas = response?.data?.[0]?.areas;
+        const cities:any = [];
+        allAreas?.map(region => {
+            region?.areas.map(city => {
+                cities.push(city)
+            })
+        })
+        dispatch(setWeatherData("cities", cities));
+    })
+}

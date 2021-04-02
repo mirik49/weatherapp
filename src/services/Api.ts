@@ -1,5 +1,5 @@
 import axios from "axios";
-const token = "";
+const token = "b0826d1640a6bf6ea627b204195d540b";
 
 export const apiGetWeatherByCoord = (lat, lon) => axios.get("https://api.openweathermap.org/data/2.5/weather?lat=" + lat + "&lon=" + lon
         + "&lang=ru&appid=" + token);
@@ -7,3 +7,5 @@ export const apiGetWeatherByCity = (city) => axios.get("https://api.openweatherm
         + "&lang=ru&appid=" + token);
 export const apiGetCurrentWeather = (lat, lon) => axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat +
         "&lon=" + lon + "&lang=ru&appid=" + token);
+
+export const apiGetAllCity = () => axios.get("https://api.hh.ru/areas");

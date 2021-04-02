@@ -1,12 +1,15 @@
 .search-bar {
   margin: 27px 0;
   width: 100%;
+
+  &__wr {
+    position: relative;
+  }
+
   position: relative;
 
   &__input {
-    &-wr {
 
-    }
 
     width: 100%;
     outline: none;

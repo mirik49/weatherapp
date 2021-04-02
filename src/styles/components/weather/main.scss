@@ -4,6 +4,7 @@
 @import "header";
 @import "info";
 @import "search-bar";
+@import "select";
 
 .weather {
   background-color: #7290B9;
@@ -12,7 +13,7 @@
 .main {
   display: flex;
   justify-content: center;
-  height: calc(100vh - 274px);
+  height: calc(100vh - 229px);
 
   &__container {
     width: 100%;
@@ -52,10 +53,10 @@
     &::after {
       position: absolute;
       content: "";
-      right: -17px;
-      top: 29px;
-      width: 20px;
-      height: 22px;
+      right: -22px;
+      top: 26px;
+      width: 25px;
+      height: 26px;
       border: 3px solid #ffffff;
       border-radius: 50%;
     }
@@ -87,10 +88,10 @@
       font-weight: bold;
 
       &::after {
-        right: -55px;
-        top: 49px;
-        width: 31px;
-        height: 32px;
+        right: -49px;
+        top: 43px;
+        width: 55px;
+        height: 56px;
         border: 12px solid #ffffff;
         border-radius: 46%;
       }
