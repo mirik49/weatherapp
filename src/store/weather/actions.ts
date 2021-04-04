@@ -35,6 +35,7 @@ export const getWeatherByCity = (city) => (dispatch) =>{
 };
 
 export const searchCityByLocation = () => (dispatch) =>{
+    console.log(navigator, "NAVIGATOR")
   if (navigator.geolocation) {
     const Geolocation = navigator.geolocation;
     Geolocation.getCurrentPosition((position) => {
