@@ -8,4 +8,4 @@ export const apiGetWeatherByCity = (city) => axios.get("https://api.openweatherm
 export const apiGetCurrentWeather = (lat, lon) => axios.get("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat +
         "&lon=" + lon + "&lang=ru&appid=" + token);
 
-export const apiGetAllCity = () => axios.get("https://api.hh.ru/areas");
+export const apiGetAllRuCity = () => axios.get("/api/ru/cities");

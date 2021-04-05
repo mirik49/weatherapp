@@ -11,16 +11,16 @@ interface HeaderProps {
                 temp: {}
             }
         }
-        cities: [{ name: string }]
+        cities: [{ city: string }]
     },
     setWeatherData: (string, any) => void,
     searchCityByLocation: () => void,
     getWeatherByCity: (string) => void,
-    allCountries: () => void
+    GetRuCities: () => void
 }
 
 const Header: React.FunctionComponent<HeaderProps> = (
-    {weatherData, setWeatherData, searchCityByLocation, getWeatherByCity, allCountries}
+    {weatherData, setWeatherData, searchCityByLocation, getWeatherByCity, GetRuCities}
 ) => {
     const {degreesType, currentCity, isShowSearchBar, inputError, currentWeather, cities} = weatherData;
     const {current} = currentWeather || {};
@@ -29,10 +29,8 @@ const Header: React.FunctionComponent<HeaderProps> = (
     const [showSelectCities, setShowSelectCities] = useState(false);
 
     useEffect(() => {
-        allCountries();
-
+        GetRuCities();
     }, []);
-
 
     const [windowWidth, setWindowWidth] =
         useState<number>(typeof window !== "undefined" ? window.screen.width : 0);
@@ -85,19 +83,19 @@ const Header: React.FunctionComponent<HeaderProps> = (
                 <ul className="select__list">
                     {
                         cities.map(selectCity => {
-                            if (selectCity.name.indexOf(city) !== -1) {
-                                const startIndex = selectCity.name.indexOf(city);
+                            if (selectCity.city.indexOf(city) !== -1) {
+                                const startIndex = selectCity.city.indexOf(city);
                                 const endIndex = city.length + startIndex;
                                 return (
                                     <li className="select__item"
-                                        key={selectCity.name}
+                                        key={selectCity.city}
                                         onClick={() => {
-                                            getWeatherByCity(selectCity.name)
+                                            getWeatherByCity(selectCity.city)
                                             setShowSelectCities(false);
                                         }}>
-                                        {selectCity.name.slice(0, startIndex)}
-                                        <strong>{selectCity.name.slice(startIndex, endIndex)}</strong>
-                                        {selectCity.name.slice(endIndex)}
+                                        {selectCity.city.slice(0, startIndex)}
+                                        <strong>{selectCity.city.slice(startIndex, endIndex)}</strong>
+                                        {selectCity.city.slice(endIndex)}
                                     </li>
                                 )
                             } else {

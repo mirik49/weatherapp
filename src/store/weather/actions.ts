@@ -1,5 +1,5 @@
 import {
-    apiGetAllCity,
+    apiGetAllRuCity,
     apiGetCurrentWeather,
     apiGetWeatherByCity, apiGetWeatherByCoord
 } from "../../services/Api";
@@ -55,15 +55,8 @@ export const searchCityByLocation = () => (dispatch) =>{
   }
 };
 
-export const allCountries = () => (dispatch) => {
-    apiGetAllCity().then(response => {
-        const allAreas = response?.data?.[0]?.areas;
-        const cities:any = [];
-        allAreas?.map(region => {
-            region?.areas.map(city => {
-                cities.push(city)
-            })
-        })
-        dispatch(setWeatherData("cities", cities));
+export const GetRuCities = () => (dispatch) => {
+    apiGetAllRuCity().then(response => {
+        dispatch(setWeatherData("cities", response.data));
     })
 }
